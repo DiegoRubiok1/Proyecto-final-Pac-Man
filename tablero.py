@@ -34,6 +34,14 @@ class Tablero:
     @property
     def width(self) -> int:
         return self.__width
+
+    @width.setter
+    def width(self, value):
+        # Valida que el ancho sea un entero positivo
+        if value < 0 or not isinstance(value, int):
+            raise ValueError("El ancho debe ser un entero positivo.")
+        self.__width = value
+
     @property
     def height(self) -> int:
         return self.__height
